@@ -23,9 +23,49 @@ namespace Parcial1_SantiagoVelasco
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        int ventas = 0;
+        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            txtContenido.Text = DateTime.Now.ToString();
+            string cliente = txtCliente.Text;
+            string cedula = txtCedula.Text;
+            txtVentas.Text = txtVentas.Text + cliente + "\n" + cedula +"\n" + txtContenido.Text + DateTime.Now.ToString() +"\n" + "\n";
+            txtGanancias.Text = ventas.ToString();
+            txtContenido.Text = "";
+        }
+
+        private void btnAñadir_Click(object sender, RoutedEventArgs e)
+        {
+            string pan = cboPanes.Text;
+            string cantidad = txtCantidad.Text;
+            txtContenido.Text = txtContenido.Text + cantidad + " " + pan;
+
+            int cant = int.Parse(txtCantidad.Text);
+            if (cboPanes.SelectedIndex == 0)
+            {
+                int precio = cant * 1000;
+                ventas += precio;
+                txtContenido.Text = txtContenido.Text + "\n" + "Precio: " + precio + "\n";
+            }
+            else
+            {
+                if (cboPanes.SelectedIndex == 1)
+                {
+                    int precio = cant * 500;
+                    ventas += precio;
+                    txtContenido.Text = txtContenido.Text + "\n" + "Precio: " + precio + "\n";
+                }
+                else
+                {
+                    int precio = cant * 2000;
+                    ventas += precio;
+                    txtContenido.Text = txtContenido.Text + "\n" + "Precio: " + precio + "\n";
+                }
+            }
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            txtContenido.Text = "";
         }
     }
 }
