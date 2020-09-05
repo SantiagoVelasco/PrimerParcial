@@ -22,5 +22,10 @@ namespace Parcial1_SantiagoVelasco
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            txtContenido.Text = DateTime.Now.ToString();
+        }
     }
 }

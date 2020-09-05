@@ -9,6 +9,7 @@
       Title="PageAdministrador">
 
     <Grid Background="#FFEEF37E">
-        
+        <Label Content="Bienvenido administrador" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Calisto MT"/>
+
     </Grid>
 </Page>
